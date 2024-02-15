@@ -45,12 +45,25 @@ class Complex
     }
     public override string ToString()
     {
-        
+       
         if(Imaginarni >= 0)
             return $"{Realna} + j{Imaginarni}";
         else
-            return $"{Realna} - j{Imaginarni}";       
+            return $"{Realna} - j{-Imaginarni}";       
     }
 
+    public Complex Conjugate()
+    {
+        return new Complex(Realna, -Imaginarni);
+    }
 
+    public double Modulus()
+    {
+        return Math.Sqrt(Realna * Realna + Imaginarni * Imaginarni);
+    }
+
+    public double Argument()
+    {
+        return Math.Atan2(Imaginarni, Realna);
+    }
 }

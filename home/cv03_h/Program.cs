@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
         double[,] matA = { { 1, 2, 3 }, 
                            { 4, 5, 6 }, 
@@ -14,7 +15,7 @@ class Program
 
         Matrix MaticeA = new Matrix(matA);
         Matrix MaticeB = new Matrix(matB);
-
+        
         Console.WriteLine("Matice A:" + MaticeA);
         Console.WriteLine("Matice B:" + MaticeB);
 

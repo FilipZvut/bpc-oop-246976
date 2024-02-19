@@ -21,9 +21,8 @@ class Program
         // Testování operátorů
         Console.WriteLine("Součet:" + (MaticeA + MaticeB));
         Console.WriteLine("Rozdíl:" + (MaticeA - MaticeB));
+        Console.WriteLine("Součin:" + (MaticeA * MaticeB));
         Console.WriteLine("Unární operátor:" + (-MaticeA));
-        // Testování násobení
-        Console.WriteLine("Násobeni:" + (MaticeA * MaticeB));
 
         // Testování porovnání
         Console.WriteLine("Porovnání:" + (MaticeA == MaticeB));
@@ -32,5 +31,6 @@ class Program
         // Testování determinantu
         Console.WriteLine("Determinant matice A:" + MaticeA.Determinant());
         Console.ReadKey();
+        
     }
 }

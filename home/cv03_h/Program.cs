@@ -30,7 +30,6 @@ class Program
 
         // Testování determinantu
         Console.WriteLine("Determinant matice A:" + MaticeA.Determinant());
-        Console.ReadKey();
-        
+        Console.ReadKey();      
     }
 }

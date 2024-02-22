@@ -37,7 +37,6 @@ public class Matrix
                    Vysledek[i, j] = matA.matice[i, j] + matB.matice[i, j];
                 }
             }
-
             return new Matrix(Vysledek);
         }
         catch

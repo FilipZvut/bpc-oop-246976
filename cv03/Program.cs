@@ -1,3 +1,7 @@
+using System;
+using System.Numerics;
+using System.Runtime.InteropServices;
+
 class Program
 {
     static void Main()

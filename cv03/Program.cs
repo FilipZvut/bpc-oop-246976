@@ -1,7 +1,3 @@
-﻿using System;
-using System.Numerics;
-using System.Runtime.InteropServices;
-
 class Program
 {
     static void Main()
@@ -20,17 +16,26 @@ class Program
         Console.WriteLine("Matice A:" + MaticeA);
         Console.WriteLine("Matice B:" + MaticeB);
 
-        // Testování operátorů
+        
         Console.WriteLine("Součet:" + (MaticeA + MaticeB));
         Console.WriteLine("Rozdíl:" + (MaticeA - MaticeB));
         Console.WriteLine("Součin:" + (MaticeA * MaticeB));
         Console.WriteLine("Unární operátor:" + (-MaticeA));
 
-        // Testování porovnání
         Console.WriteLine("Porovnání:" + (MaticeA == MaticeB));
         Console.WriteLine("Nerovnost:" + (MaticeA != MaticeB));
 
-        // Testování determinantu
-        Console.WriteLine("Determinant matice A:" + MaticeA.Determinant());     
+        Console.WriteLine("Determinant matice A:" + MaticeA.Determinant());
+
+        Console.WriteLine("\nTestování chyb:");
+        
+        MaticeA = null;
+        Console.WriteLine(MaticeA + MaticeB);
+        Console.WriteLine(MaticeA - MaticeB);
+
+        MaticeA= new Matrix(null);
+        Console.WriteLine(MaticeA * MaticeB);
+
+
     }
 }

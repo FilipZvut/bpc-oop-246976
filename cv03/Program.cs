@@ -33,7 +33,7 @@ class Program
         Console.WriteLine(MaticeA + MaticeB);
         Console.WriteLine(MaticeA - MaticeB);
 
-        MaticeA= new Matrix(null);
+        MaticeA = new Matrix(null);
         Console.WriteLine(MaticeA * MaticeB);
 
 

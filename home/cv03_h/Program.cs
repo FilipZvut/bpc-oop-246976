@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using System.Runtime.InteropServices;
 
 class Program
@@ -12,7 +13,7 @@ class Program
         double[,] matB = { { 9, 8, 7 }, 
                            { 6, 5, 4 }, 
                            { 3, 2, 1 }};
-
+        
         Matrix MaticeA = new Matrix(matA);
         Matrix MaticeB = new Matrix(matB);
         

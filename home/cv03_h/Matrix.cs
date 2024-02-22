@@ -13,14 +13,14 @@ public class Matrix
     {
         try
         {
-            matice = zadana;
             if (zadana == null)
             {
                 throw new ArgumentNullException(nameof(zadana), "Matice nemůže být null");
             }
-        }catch
+            matice = zadana;
+        }catch(Exception ex)
         {
-            Console.WriteLine("Nelze vytvořit, matice je null");
+            Console.WriteLine(ex.Message);
         }
     }
 
@@ -42,8 +42,8 @@ public class Matrix
         catch
         {
             Console.WriteLine("Nelze scitat");
+            return matA;
         }
-        return matA;
     }
 
     public static Matrix operator -(Matrix matA, Matrix matB)
@@ -72,37 +72,33 @@ public class Matrix
     {
         try
         {
-            if (matA.matice.GetLength(1) != matB.matice.GetLength(0))
-            {
+            if (matA.matice.GetLength(1) != matB.matice.GetLength(0))           
                 throw new InvalidOperationException("Špatný počet sloupců a řádků matic");
-            }
+            
 
             int radky = matA.matice.GetLength(0);
             int sloupce = matB.matice.GetLength(1);
-            int finsloupce = matA.matice.GetLength(1); // Počet sloupců první matice je roven počtu řádků druhé matice
-
-            // Inicializace výsledné matice
             double[,] vysledek = new double[radky, sloupce];
 
-            // Násobení matic
+            
             for (int i = 0; i < radky; i++)
             {
                 for (int j = 0; j < sloupce; j++)
                 {
-                    double sum = 0;
-                    for (int k = 0; k < finsloupce; k++)
+                    double soucet = 0;
+                    for (int k = 0; k < sloupce; k++)
                     {
-                        sum += matA.matice[i, k] * matB.matice[k, j];
+                        soucet += matA.matice[i, k] * matB.matice[k, j];
                     }
-                    vysledek[i, j] = sum;
+                    vysledek[i, j] = soucet;
                 }
             }
 
             return new Matrix(vysledek);
         }
-        catch
+        catch(Exception ex)
         {
-            Console.WriteLine("Nelze násobit");
+            Console.WriteLine("Nelze násobit, "+ ex.Message);
         }
         return matA;
     }
@@ -111,6 +107,9 @@ public class Matrix
     {
         try
         {
+            if(matA.matice.GetLength(0) != matB.matice.GetLength(0) || matA.matice.GetLength(1) != matB.matice.GetLength(1))
+                return false;            
+
             for (int i = 0; i < matA.matice.GetLength(0); i++)
             {
                 for (int j = 0; j < matA.matice.GetLength(1); j++)
@@ -126,8 +125,8 @@ public class Matrix
         catch
         {
             Console.WriteLine("Nelze porovnávat");
+            return false;
         }
-        return false;
     }
     public static bool operator !=(Matrix matA, Matrix matB)
     {

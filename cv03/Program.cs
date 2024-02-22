@@ -31,7 +31,6 @@ class Program
         Console.WriteLine("Nerovnost:" + (MaticeA != MaticeB));
 
         // Testování determinantu
-        Console.WriteLine("Determinant matice A:" + MaticeA.Determinant());
-        Console.ReadKey();      
+        Console.WriteLine("Determinant matice A:" + MaticeA.Determinant());     
     }
 }

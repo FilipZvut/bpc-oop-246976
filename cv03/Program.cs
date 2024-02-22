@@ -2,13 +2,13 @@ class Program
 {
     static void Main()
     {
-        double[,] matA = { { 1, 2, 3 }, 
-                           { 4, 5, 6 }, 
-                           { 7, 8, 9 }};
+        double[,] matA = { { 8, 5, 9 }, 
+                           { 7, 9, 10 }, 
+                           { 8, 1, 2 }};
 
-        double[,] matB = { { 9, 8, 7 }, 
-                           { 6, 5, 4 }, 
-                           { 3, 2, 1 }};
+        double[,] matB = { {10, 3, 2 }, 
+                           { 7, 8, 5 }, 
+                           { 1, 2, 2 }};
         
         Matrix MaticeA = new Matrix(matA);
         Matrix MaticeB = new Matrix(matB);

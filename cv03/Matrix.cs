@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -15,7 +15,7 @@ public class Matrix
         {
             if (zadana == null)
             {
-                throw new ArgumentNullException(nameof(zadana), "Matice nemůže být null");
+                throw new ArgumentNullException("Zadana matice je null");
             }
             matice = zadana;
         }catch(Exception ex)
@@ -39,9 +39,9 @@ public class Matrix
             }
             return new Matrix(Vysledek);
         }
-        catch
+        catch(Exception ex)
         {
-            Console.WriteLine("Nelze scitat");
+            Console.WriteLine("Nelze scitat, \n" + ex.Message);
             return matA;
         }
     }
@@ -62,11 +62,11 @@ public class Matrix
 
             return new Matrix(Vysledek);
         }
-        catch
+        catch(Exception ex)
         {
-            Console.WriteLine("Nelze odečítat");
+            Console.WriteLine("Nelze odečítat, \n" + ex.Message);
+            return matA;
         }
-        return matA;
     }
     public static Matrix operator *(Matrix matA, Matrix matB)
     {
@@ -98,9 +98,9 @@ public class Matrix
         }
         catch(Exception ex)
         {
-            Console.WriteLine("Nelze násobit, "+ ex.Message);
+            Console.WriteLine("Nelze násobit, \n"+ ex.Message);
+            return matA;
         }
-        return matA;
     }
 
     public static bool operator ==(Matrix matA, Matrix matB)
@@ -122,9 +122,9 @@ public class Matrix
             }
             return true;
         }
-        catch
+        catch(Exception ex)
         {
-            Console.WriteLine("Nelze porovnávat");
+            Console.WriteLine("Nelze porovnávat, \n" + ex.Message);
             return false;
         }
     }
@@ -146,9 +146,9 @@ public class Matrix
             }
             return new Matrix(Vysledek);
         }
-        catch
+        catch(Exception ex)
         {
-            Console.WriteLine("Nelze provést");
+            Console.WriteLine("Nelze provést, \n" + ex.Message);
         }
         return matA;
     }
@@ -187,9 +187,9 @@ public class Matrix
                   matice[0, 1] * matice[1, 0] * matice[2, 2] -
                   matice[0, 0] * matice[1, 2] * matice[2, 1];
         }
-        catch 
+        catch(Exception ex)
         {
-            Console.WriteLine("Nelze vypocítat"); 
+            Console.WriteLine("Nelze vypocítat, \n" + ex); 
             return 0;
         }
     }

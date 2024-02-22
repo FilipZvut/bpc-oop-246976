@@ -169,20 +169,23 @@ public class Matrix
     {
         try
         {
-            if (matice.GetLength(0)!=3 ||  matice.GetLength(1)!=3)
-                throw new InvalidOperationException("Matice není 3x3");
+            double vysledek = 0;
+            if (matice.GetLength(0)>3 ||  matice.GetLength(1)>3)
+                throw new InvalidOperationException("Matice je větší než 3x3");
+            if (matice.GetLength(0) != matice.GetLength(1))
+                throw new InvalidOperationException("Matice není čtvercová");
 
-            return matice[0, 0] * matice[1, 1] * matice[2, 2] +
-                  matice[0, 1] * matice[1, 2] * matice[2, 0] +
-                  matice[0, 2] * matice[1, 0] * matice[2, 1] -
-                  matice[0, 2] * matice[1, 1] * matice[2, 0] -
-                  matice[0, 1] * matice[1, 0] * matice[2, 2] -
-                  matice[0, 0] * matice[1, 2] * matice[2, 1];
+            if(matice.GetLength(0) == 3)
+            return matice[0, 0] * matice[1, 1] * matice[2, 2] + matice[0, 1] * matice[1, 2] * matice[2, 0] + matice[0, 2] * matice[1, 0] * matice[2, 1]
+                  -matice[0, 2] * matice[1, 1] * matice[2, 0] - matice[0, 1] * matice[1, 0] * matice[2, 2] - matice[0, 0] * matice[1, 2] * matice[2, 1];
+
+            if (matice.GetLength(0) == 2)
+                return matice[0, 0] * matice[1, 1] - matice[1, 0] * matice[0, 1];
         }
         catch(Exception ex)
         {
-            Console.WriteLine("Nelze vypocítat, \n" + ex); 
-            return 0;
+            Console.WriteLine("Nelze vypocítat determinant, \n" + ex); 
         }
+            return 0;
     }
 } 

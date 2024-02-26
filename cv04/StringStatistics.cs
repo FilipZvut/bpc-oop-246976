@@ -61,20 +61,18 @@ class StringStatistics
     {
         string nejdelsi = "";
         string slovo = "";
-        int pismena = 0;
         
         foreach (char c in str)
         {
-            slovo += c;
-            pismena++;
             if (c == ' ' || c=='!' || c=='.' || c=='?' )
             {
-                if(pismena < slovo.Length)
+                if (slovo.Length >= nejdelsi.Length)
                     nejdelsi = slovo;
-
+                
                 slovo = "";
-                pismena = 0;
             }
+            else
+                slovo += c;
         }
         return nejdelsi;
     }

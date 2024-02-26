@@ -1,11 +1,13 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Globalization;
+using System.Security.Cryptography.X509Certificates;
+using static System.Net.Mime.MediaTypeNames;
 
 class StringStatistics
 {
     string str;
-    public StringStatistics(string strstats)
+    public StringStatistics(string StrZadavany)
     {
-        str = strstats;
+        str = StrZadavany;
     }
 
     public int PocetSlov()
@@ -43,7 +45,6 @@ class StringStatistics
                 znamenko=true;
             }
 
-
             if(znamenko&& char.IsUpper(c))
             {
                 pocet++;
@@ -57,24 +58,24 @@ class StringStatistics
 
         return pocet;
     }
-    public string NejdelsiSlovo()
+    public string[] NejdelsiSlova()
     {
-        string nejdelsi = "";
-        string slovo = "";
-        
-        foreach (char c in str)
-        {
-            if (c == ' ' || c=='!' || c=='.' || c=='?' )
-            {
-                if (slovo.Length >= nejdelsi.Length)
-                    nejdelsi = slovo;
-                
-                slovo = "";
-            }
-            else
-                slovo += c;
-        }
-        return nejdelsi;
+        var slova = str.Split(' ', '\n');
+        int max = slova.Max(word => word.Length);
+        return slova.Where(word => word.Length == max).ToArray();
+    }
+    public string[] NejkratsiSlova()
+    {
+        var slova = str.Split(' ', '\n');
+        int min = slova.Min(word => word.Length);
+        return slova.Where(word => word.Length == min).ToArray();
+    }
+    public string NejcastejsiSlovo()
+    {
+        var slova = str.Split(' ', '\n');
+        var nejvicslov = slova.Max(word => word.Length);
+        return slova.First(word => word.Length == nejvicslov);
+
     }
 }
 

@@ -1,6 +1,6 @@
 ﻿class program
 {
-    static void Main(string[] args)
+    static void Main()
     {
         string testovaciText = "Toto je retezec predstavovany nekolika radky,\n"
                              + "ktere jsou od sebe oddeleny znakem LF (Line Feed).\n"
@@ -8,12 +8,14 @@
                              + "Toto je jen zkratka zkr. ale ne konec vety. A toto je\n"
                              + "posledni veta!";
 
-        StringStatistics str = new StringStatistics(testovaciText);
+        StringStatistics str = new(testovaciText);
         Console.WriteLine(testovaciText+"\n");
 
         Console.WriteLine(str.PocetSlov());
         Console.WriteLine(str.PocetRadku());
         Console.WriteLine(str.PocetVet());
-        Console.WriteLine(str.NejdelsiSlovo());
+        Console.WriteLine(string.Join(", ", str.NejdelsiSlova()));
+        Console.WriteLine(string.Join(", " , str.NejkratsiSlova()));
+        Console.WriteLine(str.NejcastejsiSlovo());
     }
 }

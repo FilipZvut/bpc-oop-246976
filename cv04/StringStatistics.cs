@@ -75,7 +75,6 @@ class StringStatistics
         var slova = str.Split(' ', '\n');
         var nejvicslov = slova.Max(word => word.Length);
         return slova.First(word => word.Length == nejvicslov);
-
     }
 }
 

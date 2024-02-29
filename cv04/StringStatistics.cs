@@ -85,9 +85,7 @@ class StringStatistics
         }
         int maxPocet = ListSlov.Max(pocetslov => pocetslov.Value);
         return ListSlov.Where(pocetslov => pocetslov.Value == maxPocet).Select(pocetslov => pocetslov.Key).ToArray();
-    }
-
-    
+    }    
     public string[] Abecedne()
     {
         var slova = str.Split(mezera, StringSplitOptions.RemoveEmptyEntries);

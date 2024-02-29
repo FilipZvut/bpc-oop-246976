@@ -5,6 +5,7 @@ using static System.Net.Mime.MediaTypeNames;
 class StringStatistics
 {
     string str;
+    char[] mezera = { ' ', '\n', ',', '!', '.', '?', ')', '(' };
     public StringStatistics(string StrZadavany)
     {
         str = StrZadavany;
@@ -15,7 +16,7 @@ class StringStatistics
         int pocet = 1;
         foreach (char c in str)
         {
-            if (c == ' '|| c=='\n')
+            if (c == ' ' || c == '\n')
             {
                 pocet++;
             }
@@ -36,16 +37,16 @@ class StringStatistics
     }
     public int PocetVet()
     {
-        bool znamenko=false;
+        bool znamenko = false;
         int pocet = 1;
         foreach (char c in str)
         {
-            if(c == '.' || c == '!' || c == '?')
+            if (c == '.' || c == '!' || c == '?')
             {
-                znamenko=true;
+                znamenko = true;
             }
 
-            if(znamenko&& char.IsUpper(c))
+            if (znamenko && char.IsUpper(c))
             {
                 pocet++;
                 znamenko = false;
@@ -60,21 +61,38 @@ class StringStatistics
     }
     public string[] NejdelsiSlova()
     {
-        var slova = str.Split(' ', '\n');
+        string[] slova = str.Split(mezera, StringSplitOptions.RemoveEmptyEntries);
         int max = slova.Max(word => word.Length);
         return slova.Where(word => word.Length == max).ToArray();
     }
     public string[] NejkratsiSlova()
     {
-        var slova = str.Split(' ', '\n');
-        int min = slova.Min(word => word.Length);
-        return slova.Where(word => word.Length == min).ToArray();
+        string[] slova = str.Split(mezera, StringSplitOptions.RemoveEmptyEntries);
+        int min = slova.Min(slovo => slovo.Length);
+        return slova.Where(slovo => slovo.Length == min).ToArray();
     }
-    public string NejcastejsiSlovo()
+
+    public string[] NejcastejsiSlovo()
     {
-        var slova = str.Split(' ', '\n');
-        var nejvicslov = slova.Max(word => word.Length);
-        return slova.First(word => word.Length == nejvicslov);
+        string[] slova = str.Split(mezera, StringSplitOptions.RemoveEmptyEntries);
+        var ListSlov = new Dictionary<string, int>();
+        foreach (string slovo in slova)
+        {
+            if (ListSlov.ContainsKey(slovo))
+                ListSlov[slovo]++;
+            else
+                ListSlov[slovo] = 1;
+        }
+        int maxPocet = ListSlov.Max(pocetslov => pocetslov.Value);
+        return ListSlov.Where(pocetslov => pocetslov.Value == maxPocet).Select(pocetslov => pocetslov.Key).ToArray();
+    }
+
+    
+    public string[] Abecedne()
+    {
+        var slova = str.Split(mezera, StringSplitOptions.RemoveEmptyEntries);
+        Array.Sort(slova);
+        return slova;
     }
 }
 

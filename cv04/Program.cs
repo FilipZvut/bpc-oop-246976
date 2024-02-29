@@ -1,4 +1,6 @@
-﻿class program
+﻿using System.Globalization;
+
+class program
 {
     static void Main()
     {
@@ -11,11 +13,12 @@
         StringStatistics str = new(testovaciText);
         Console.WriteLine(testovaciText+"\n");
 
-        Console.WriteLine(str.PocetSlov());
-        Console.WriteLine(str.PocetRadku());
-        Console.WriteLine(str.PocetVet());
-        Console.WriteLine(string.Join(", ", str.NejdelsiSlova()));
-        Console.WriteLine(string.Join(", " , str.NejkratsiSlova()));
-        Console.WriteLine(str.NejcastejsiSlovo());
+        Console.WriteLine("Pocet slov: " + str.PocetSlov());
+        Console.WriteLine("Pocet radku: " + str.PocetRadku());
+        Console.WriteLine("Pocet vet:" + str.PocetVet());
+        Console.WriteLine("Nejdelsi slovo: " + string.Join(", ", str.NejdelsiSlova()));
+        Console.WriteLine("Nejkratsi slovo: " + string.Join(", ", str.NejkratsiSlova()));
+        Console.WriteLine("Nejcastejsi slovo: " + string.Join(", ", str.NejcastejsiSlovo()));
+        Console.WriteLine("Setridena slova podle abecedy: \n" + string.Join(", ", str.Abecedne()));
     }
 }

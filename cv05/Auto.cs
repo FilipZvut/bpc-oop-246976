@@ -49,8 +49,9 @@ public class Auto
 
     public override string ToString()
     {
-        return $"Palivo: {palivo}, velikost nadrze: {velikostNadrze}, stav nadrze: {stavNadrze}\n";
+        return $"Palivo: {palivo}, velikost nadrze: {velikostNadrze}, stav nadrze: {stavNadrze}\n{Radio}\n";
+        
     }
 
-    
+
 }

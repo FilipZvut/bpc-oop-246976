@@ -1,5 +1,5 @@
 ﻿
-public class Auto
+public abstract class Auto
 {
     private TypPaliva palivo;
     private int velikostNadrze;
@@ -36,15 +36,25 @@ public class Auto
     }
     public void Natankuj(TypPaliva palivo, float mnozstvi)
     {
-        if(stavNadrze+mnozstvi <= velikostNadrze)
-        
-            stavNadrze += mnozstvi;        
-        else
-            throw new Exception("Nadrz by pretekla");
-        
+        try 
+        {
+            if (!(stavNadrze + mnozstvi <= velikostNadrze) && !(this.palivo == palivo))
+                throw new Exception("Spatny typ paliva a zaroven by nadrz pretekla");
 
-        if (this.palivo != palivo)
-            throw new Exception("Spatny typ paliva");
+            if (stavNadrze + mnozstvi <= velikostNadrze && this.palivo == palivo)
+                stavNadrze += mnozstvi;
+            else
+            {
+                if (this.palivo != palivo)
+                    throw new Exception("Spatny typ paliva");
+                else
+                    throw new Exception("Nadrz by pretekla");
+            }
+
+        }catch(Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
     }
 
     public override string ToString()

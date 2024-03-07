@@ -1,11 +1,11 @@
 ﻿
 public class Autoradio
 {
-    private float naladenyKmitocet;
+    private double naladenyKmitocet;
     private bool radioZapnuto;
-    private Dictionary<int, float> RadioPredvolba = new();
+    private Dictionary<int, double> RadioPredvolba = new();
 
-    public float NaladenyKmitocet
+    public double NaladenyKmitocet
     {
         get { return naladenyKmitocet; }
         set { naladenyKmitocet = value; }
@@ -17,7 +17,7 @@ public class Autoradio
         set { radioZapnuto = value; }
     }
 
-    public void NastavPredvolbu(int cislo, float kmitocet)
+    public void NastavPredvolbu(int cislo, double kmitocet)
     {
         RadioPredvolba.Add(cislo, kmitocet);
     }
@@ -25,8 +25,8 @@ public class Autoradio
     public void PreladNaPredvolbu(int predvolba)
     {
         NaladenyKmitocet = RadioPredvolba[predvolba];
-
     }
+
     public override string ToString()
     {
         return $"Naladeny kmitocet: {NaladenyKmitocet}, Radio zapnuto: {RadioZapnuto}";

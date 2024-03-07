@@ -13,10 +13,16 @@ public class Nakladni : Auto
 
     public void Naklad(int Naklad)
     {
-        if (Naklad <= MaxNaklad)
-            PrepravovanyNaklad = Naklad;
-        else
-            throw new Exception("Nemam volne misto");
+        try
+        {
+            if (Naklad <= MaxNaklad)
+                PrepravovanyNaklad = Naklad;
+            else
+                throw new Exception("Nemam volne misto pro naklad");
+        }catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
     }
     public override string ToString()
     {

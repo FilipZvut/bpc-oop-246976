@@ -12,13 +12,19 @@ public class Osobni : Auto
     }
     public void Osoby(int PocetOsob)
     {
-        if (PocetOsob <= maxOsob)
+        try
         {
-            prepravovaneOsoby = PocetOsob;
-        }
-        else
+            if (PocetOsob <= maxOsob)
+            {
+                prepravovaneOsoby = PocetOsob;
+            }
+            else
+            {
+                throw new Exception("Nemam volne misto pro osoby");
+            }
+        }catch(Exception e)
         {
-            throw new Exception("Nemam volne misto");
+            Console.WriteLine(e.Message);
         }
     }
     public override string ToString()

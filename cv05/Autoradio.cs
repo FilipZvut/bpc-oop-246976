@@ -27,4 +27,8 @@ public class Autoradio
         NaladenyKmitocet = RadioPredvolba[predvolba];
 
     }
+    public override string ToString()
+    {
+        return $"Naladeny kmitocet: {NaladenyKmitocet}, Radio zapnuto: {RadioZapnuto}";
+    }
 }

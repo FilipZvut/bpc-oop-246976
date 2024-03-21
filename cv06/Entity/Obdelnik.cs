@@ -1,5 +1,5 @@
 ﻿
-public class Obdelnik :Objekt2D
+class Obdelnik :Objekt2D
 {
     private double StranaA;
     private double StranaB;
@@ -16,7 +16,7 @@ public class Obdelnik :Objekt2D
     }
     public override void Kresli()
     {
-        Console.WriteLine($"Obdelnik, StranaA: {StranaA}, StranaB: {StranaB}");
+        Console.WriteLine($"Obdelnik,\t StranaA: {StranaA}, StranaB: {StranaB}");
     }
 }
 

@@ -12,7 +12,7 @@ class Elipsa : Objekt2D
 
     public override void Kresli()
     {
-        Console.WriteLine($"Elipsa, PoloosaA: {PoloosaA}, PoloosaB: {PoloosaB}");
+        Console.WriteLine($"Elipsa,\t\t PoloosaA: {PoloosaA}, PoloosaB: {PoloosaB}");
     }
 
     public override double SpoctiPlochu()

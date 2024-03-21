@@ -3,7 +3,7 @@
     static void Main(string[] args)
     {
         int[] ints = { 1, 3, 5, 7, 9 };
-        string[] strings = { "test", "test1", "test3", "z" };
+        string[] strings = { "atest", "test1", "test3", "ztest" };
         
         Kruh[] kruhy = { new Kruh(10),
                          new Kruh(20),

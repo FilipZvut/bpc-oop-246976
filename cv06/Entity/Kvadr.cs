@@ -1,5 +1,5 @@
 ﻿
-public class Kvadr : Objekt3D
+class Kvadr : Objekt3D
 {
     private double StranaA;
     private double StranaB;
@@ -24,6 +24,6 @@ public class Kvadr : Objekt3D
 
     public override void Kresli()
     {
-        Console.WriteLine($"Kvadr, StranaA: {StranaA}, StranaB: {StranaB}, Vyska: {Vyska}");
+        Console.WriteLine($"Kvadr,\t\t StranaA: {StranaA}, StranaB: {StranaB}, Vyska: {Vyska}");
     }
 }

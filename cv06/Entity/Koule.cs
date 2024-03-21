@@ -1,5 +1,5 @@
 ﻿
-public class Koule : Objekt3D
+class Koule : Objekt3D
 {
     public double Polomer;
 
@@ -20,6 +20,6 @@ public class Koule : Objekt3D
 
     public override void Kresli()
     {
-        Console.WriteLine($"Koule, Polomer: {Polomer}");
+        Console.WriteLine($"Koule,\t\t Polomer: {Polomer}");
     }
 }

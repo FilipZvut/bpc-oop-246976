@@ -12,13 +12,13 @@ public class Program
 
         GrObjekt[] Objekty = new GrObjekt[]
         {
-            new Valec(3, 10),
             new Trojuhelnik(3, 5, 6),
-            new Obdelnik(4, 10),
+            new Jehlan(5,3,4),
             new Kvadr(5, 4, 3),
+            new Obdelnik(4, 10),
+            new Valec(3, 10),
             new Kruh(10),
             new Koule(20),
-            new Jehlan(5,3,4),
             new Elipsa(10,15)
         };
 

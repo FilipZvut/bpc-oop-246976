@@ -1,5 +1,5 @@
 ﻿
-public class Jehlan : Objekt3D
+class Jehlan : Objekt3D
 {
     private double StranaA;
     private double StranaB;
@@ -14,7 +14,7 @@ public class Jehlan : Objekt3D
 
     public override void Kresli()
     {
-        Console.WriteLine($"Jehlan, StranaA: {StranaA}, StranaB: {StranaB}, Vyska: {Vyska}");
+        Console.WriteLine($"Jehlan,\t\t StranaA: {StranaA}, StranaB: {StranaB}, Vyska: {Vyska}");
     }
 
     public override double SpoctiObjem()

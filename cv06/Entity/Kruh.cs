@@ -1,5 +1,5 @@
 ﻿
-public class Kruh : Objekt2D
+class Kruh : Objekt2D
 {
     private double Polomer;
 
@@ -15,6 +15,6 @@ public class Kruh : Objekt2D
 
     public override void Kresli()
     {
-        Console.WriteLine($"Kruh, Polomer: {Polomer}");
+        Console.WriteLine($"Kruh,\t\t Polomer: {Polomer}");
     }
 }

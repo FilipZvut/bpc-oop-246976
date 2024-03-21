@@ -1,5 +1,5 @@
 ﻿
-public class Trojuhelnik : Objekt2D
+class Trojuhelnik : Objekt2D
 {
     private double StranaA;
     private double StranaB;
@@ -14,7 +14,7 @@ public class Trojuhelnik : Objekt2D
 
     public override void Kresli()
     {
-        Console.WriteLine($"Trojuhelnik, StranaA: {StranaA}, StranaB: {StranaB}, StranaC: {StranaC}");
+        Console.WriteLine($"Trojuhelnik,\t StranaA: {StranaA}, StranaB: {StranaB}, StranaC: {StranaC}");
     }
 
     public override double SpoctiPlochu()

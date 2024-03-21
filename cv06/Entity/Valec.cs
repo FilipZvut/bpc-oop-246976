@@ -1,5 +1,5 @@
 ﻿
-public class Valec : Objekt3D
+class Valec : Objekt3D
 {
     private double Polomer;
     private double Vyska;
@@ -20,7 +20,7 @@ public class Valec : Objekt3D
     }
     public override void Kresli()
     {
-        Console.WriteLine($"Valec, Polomer: {Polomer}, Vyska: {Vyska}");
+        Console.WriteLine($"Valec,\t\t Polomer: {Polomer}, Vyska: {Vyska}");
     }
 }
 

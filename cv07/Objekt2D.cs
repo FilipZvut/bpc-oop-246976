@@ -3,7 +3,7 @@
     public int CompareTo(object obj)
     {
         if (((Objekt2D)obj).Plocha() > this.Plocha())
-            return 0;
+            return -1;
         else 
             return 1;
     }

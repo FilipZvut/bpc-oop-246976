@@ -1,18 +1,19 @@
 ﻿<Window x:Class="cv09.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Kalkulačka" Height="471" Width="312">
+        Title="Kalkulačka" Height="519" Width="312">
     <Grid Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Display -->
-        <TextBox x:Name="Display" Grid.Row="0" IsReadOnly="True" TextAlignment="Right" FontSize="36" Padding="4" FontWeight="Bold" FontFamily="Segoe UI Variable Display Semibold" Height="70" Grid.RowSpan="2" VerticalAlignment="Top" Background="#FFC7C7C7"></TextBox>
-
+        <!-- Display a Pamet-->
+        <TextBox x:Name="Display" Grid.Row="0" IsReadOnly="True" Text="0" TextAlignment="Right" FontSize="36" Padding="4" FontWeight="Bold" FontFamily="Segoe UI Variable Display Semibold" Grid.RowSpan="2" Background="#FFC7C7C7" BorderThickness="1,0,1,1" Height="62" VerticalAlignment="Top"/>
+        <TextBox x:Name="M" Grid.Row="0" IsReadOnly="True" Text="M" TextAlignment="Left" FontSize="20" Padding="2" FontWeight="Bold" FontFamily="Segoe UI Variable Display Semibold" Grid.RowSpan="2" Background="#FFC3C3C3" BorderThickness="0,0,0,0" Height="33" VerticalAlignment="Top" Margin="0,62,0,0" HorizontalAlignment="Left" Width="267"/>
+        <TextBox x:Name="Pamet" Grid.Row="0" IsReadOnly="True" Text="0" TextAlignment="Right" FontSize="16" Padding="6" FontWeight="Bold" FontFamily="Segoe UI Variable Display Semibold" Grid.RowSpan="2" Background="#FFC3C3C3" BorderThickness="0,0,0,0" Height="33" VerticalAlignment="Top" Margin="73,62,0,0"/>
         <!-- Tlacitka -->
-        <Grid Grid.Row="1" Margin="0,75,0,0" Background="#FF979797">
+        <Grid Grid.Row="1" Margin="0,100,0,0" Background="#FF979797">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>

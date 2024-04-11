@@ -1,0 +1,37 @@
+CREATE TABLE [dbo].[Hodnoceni] (
+    [ID_studenta]      INT           NOT NULL,
+    [Zkratka_predmetu] NVARCHAR (10) NOT NULL,
+    [Datum_hodnoceni]  DATE          NOT NULL,
+    [Hodnoceni]        FLOAT (53)    NULL,
+    PRIMARY KEY CLUSTERED ([ID_studenta] ASC, [Zkratka_predmetu] ASC, [Datum_hodnoceni] ASC),
+    FOREIGN KEY ([ID_studenta]) REFERENCES [dbo].[Student] ([Id]),
+    FOREIGN KEY ([Zkratka_predmetu]) REFERENCES [dbo].[Predmet] ([Zkratka])
+);
+
+
+
+CREATE TABLE [dbo].[Predmet] (
+    [Zkratka] NVARCHAR (10) NOT NULL,
+    [Nazev]   NVARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Zkratka] ASC)
+);
+
+
+
+CREATE TABLE [dbo].[Student] (
+    [Id]            INT           NOT NULL,
+    [Jmeno]         NVARCHAR (50) NOT NULL,
+    [Prijmeni]      NVARCHAR (50) NOT NULL,
+    [DatumNarozeni] DATE          NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+CREATE TABLE [dbo].[Zapsani] (
+    [ID_studenta]      INT           NOT NULL,
+    [Zkratka_predmetu] NVARCHAR (10) NOT NULL,
+    PRIMARY KEY CLUSTERED ([ID_studenta] ASC, [Zkratka_predmetu] ASC),
+    FOREIGN KEY ([ID_studenta]) REFERENCES [dbo].[Student] ([Id]),
+    FOREIGN KEY ([Zkratka_predmetu]) REFERENCES [dbo].[Predmet] ([Zkratka])
+);
+

@@ -1,4 +1,4 @@
-﻿USE [D:\BPC-OOP\BPC-OOP-246976\CV10.2\VYUKA.MDF];
+﻿USE [C:\USERS\ZADNI\ONEDRIVE\PLOCHA\CODE\OOP\BPC-OOP-246976\CV10.2\Database1.MDF];
 GO
 
 SELECT Student.Jmeno, Student.Prijmeni, Predmet.Nazev AS Nazev_predmetu

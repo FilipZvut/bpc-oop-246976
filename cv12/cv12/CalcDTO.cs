@@ -1,9 +1,8 @@
-﻿namespace cv12
+﻿namespace cv12;
+
+public class CalcDTO
 {
-    public class CalcDTO
-    {
-        public decimal Operand1 { get; set; }
-        public decimal Operand2 { get; set; }
-        public string Operation { get; set; }
-    }
+    public decimal Operand1 { get; set; }
+    public decimal Operand2 { get; set; }
+    public string Operation { get; set; }
 }

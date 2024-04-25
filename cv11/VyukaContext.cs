@@ -11,7 +11,7 @@ namespace EFCore
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Vyuka;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer("D:\\bpc-oop\\bpc-oop-246976\\CV10.2\\Vyuka.MDF");
         }
     }
 }
